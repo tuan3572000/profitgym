@@ -87,14 +87,23 @@ TEMPLATES = [
 WSGI_APPLICATION = 'progymfit_wagtail.wsgi.application'
 
 
+# Add new user if access denied on mysql8
+
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'HOST':'127.0.0.1',
+        'NAME': 'product_content',
+        'USER': 'sub_root',
+        'PASSWORD': ''
     }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    # }
 }
 
 
