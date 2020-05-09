@@ -1,0 +1,10 @@
+    {% if contact_tags %}
+        {% for contact in contact_tags %}
+            <li class="nav-item">
+                <a class="nav-link" href="{{ contact.url }}"> Liên hệ</a>
+            </li>
+        {% endfor %}
+
+    {% endif %}
+
+

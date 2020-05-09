@@ -1,0 +1,7 @@
+.pt-below-navbar{
+    padding-top: 55px;
+}
+
+.navbar.shadow{
+    box-shadow: 0 0.01rem 0.1rem rgba(0,0,0,.15) !important;
+}

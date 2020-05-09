@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% load wagtailimages_tags %}
+
+{% block content %}
+
+    {% for product in products %}
+        <div class="row" >
+            <div class="row">
+                {% image product.image fill-250x250 as product_image %}
+                <a href="{{product.url}}" >
+                    <img src="{{product_image.url}}" alt="{{product.name}}">
+                </a>
+            </div>
+            <div class="row">
+                <a href="{{product.url}}" >
+                    {{ product.title }}
+                </a>
+            </div>
+        </div>
+
+<br>
+    {% endfor %}
+
+{% endblock content %}
