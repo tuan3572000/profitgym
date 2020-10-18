@@ -1,15 +1,5 @@
-<a class="nav-link {% if product_tags %} dropdown-toggle {% endif %}" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<a  href="{% url 'product-listing' %}" role="button" >
             Sản phẩm
   </a>
-
-<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-    {% for product_tag in product_tags %}
-    <p>
-        <a class="dropdown-item"  href="{{ product_tag.url }}">
-            {{ product_tag.text }}
-        </a>
-    </p>
-{% endfor %}
-</div>
 
 

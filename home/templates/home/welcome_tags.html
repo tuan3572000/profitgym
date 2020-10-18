@@ -1,0 +1,31 @@
+   {% load wagtailimages_tags %}
+    {% if welcome_tags %}
+
+        <div id="slideshow">
+            <div id="slides-main" class="slides">
+                {% for welcome in welcome_tags %}
+                    {% image welcome.image original as welcome_image %}
+                    <div class="slide" data-index="{{forloop.counter0}}">
+                        <div class="abs-mask">
+                            <div class="slide-image" style="background-image: url({{welcome_image.url}})"></div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div id="slides-aux" class="slides mask">
+                {% for welcome in welcome_tags %}
+                    <h2 class="slide-title slide" data-index="{{forloop.counter0}}"><a href="#">{{welcome.name}}</a></h2>
+                {% endfor %}
+            </div>
+        </div>
+        <nav id="slider-nav">
+            <span class="current">01</span>
+            <span class="sep"></span>
+            <span class="total">{{welcome_tags|length}}</span>
+        </nav>
+
+    {% endif %}
+
+
+
+

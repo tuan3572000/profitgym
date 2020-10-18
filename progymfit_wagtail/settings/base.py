@@ -28,6 +28,8 @@ INSTALLED_APPS = [
     'search',
     'product',
     'contact',
+    'about',
+    'richtext',
 
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
@@ -92,18 +94,19 @@ WSGI_APPLICATION = 'progymfit_wagtail.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'HOST':'127.0.0.1',
-        'NAME': 'product_content',
-        'USER': 'sub_root',
-        'PASSWORD': ''
+        'HOST':'112.78.2.222',
+        'NAME': 'pro55602_progymfit',
+        'USER': 'pro55602_progymfit',
+        'PASSWORD': '123qweqwe!',
+        'OPTIONS':
+        {
+            'charset': 'utf8'  # This is the important line
+        }
     }
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    # }
 }
 
 
@@ -171,3 +174,4 @@ WAGTAIL_SITE_NAME = "progymfit_wagtail"
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
 BASE_URL = 'http://example.com'
+

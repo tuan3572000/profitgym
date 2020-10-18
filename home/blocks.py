@@ -7,3 +7,4 @@ class RichtextBlock(blocks.RichTextBlock):
         template = "blocks/richtext_block.html",
         icon = "edit",
         label = "Full richtext"
+        

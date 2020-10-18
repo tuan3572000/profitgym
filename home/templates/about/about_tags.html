@@ -1,0 +1,10 @@
+    {% if about_tags %}
+        {% for about in about_tags %}
+            <li class="nav-item">
+                <a class="nav-link" href="{{ about.url }}">  Giới thiệu</a>
+            </li>
+        {% endfor %}
+
+    {% endif %}
+
+

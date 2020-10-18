@@ -1,0 +1,17 @@
+   {% load wagtailimages_tags %}
+    {% if welcome_tags %}
+        {% for welcome in welcome_tags %}
+            {% image welcome.image min-900x600 as welcome_image %}
+            <div class="section  fp-auto-height-responsive mobileview-service fp-section active fp-completely" id="section{{forloop.counter}}" data-title="{{welcome.name}}" data-anchor="services">
+                <img class="lazy-bg" src="{{welcome_image.url}}" style="display: block;">
+                <div class="container">
+
+                <div class="row service section-container" style="display: block;">
+                </div>
+                </div>
+            </div>
+        {% endfor %}
+
+    {% endif %}
+
+

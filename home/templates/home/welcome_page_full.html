@@ -1,0 +1,24 @@
+<!-- Full Page Image Header with Vertically Centered Content -->
+{% load wagtailcore_tags custom_tags static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+
+<body>
+    <div id="hero-slider">
+        <div id="logo" class="mask">
+            <!--<span class="logo-text masked">Progymfit</span>-->
+        </div>
+        {% welcome_tags %}
+    </div>
+</body>
+<link rel="stylesheet" href="{% static 'css/style_welcome.css' %}">
+<script type="text/javascript"  defer='defer' src="{% static 'js/main_welcome.js' %}"></script>
+</html>

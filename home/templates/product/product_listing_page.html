@@ -1,25 +1,69 @@
 {% extends "base.html" %}
 
-{% load wagtailimages_tags %}
+{% load wagtailimages_tags wagtailcore_tags static %}
+
 
 {% block content %}
 
-    {% for product in products %}
-        <div class="row" >
-            <div class="row">
-                {% image product.image fill-250x250 as product_image %}
-                <a href="{{product.url}}" >
-                    <img src="{{product_image.url}}" alt="{{product.name}}">
-                </a>
-            </div>
-            <div class="row">
-                <a href="{{product.url}}" >
-                    {{ product.title }}
-                </a>
-            </div>
-        </div>
+<script type="text/javascript"  defer='defer' src="{% static 'js/product_listing_page.js' %}"></script>
 
-<br>
-    {% endfor %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/product_listing_page.css' %}">
+
+	<!--Main layout-->
+	<div class="container">
+        {% for category in categories %}
+
+            <!--Page heading-->
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="h3-responsive">{{category.title}}
+                        {% for desc in category.description %}
+                            <div class="row">
+                                <small class="text-muted">{% include_block desc %} </small>
+                             </div>
+                        {% endfor %}
+
+                    </h3>
+                </div>
+            </div>
+            <!--/.Page heading-->
+            <hr>
+            <!--First row-->
+            <div class="row wow">
+                <!--First column-->
+                <div class="col-lg-4 wow fadeIn" data-wow-delay="0.2s">
+                    {% for product in category.products %}
+                        {% for block in product.images %}
+                            {% if forloop.counter == 1 %}
+
+                                {% image block.value original as img %}
+                                <div class="card">
+                                    <!--Card image-->
+                                    <div class="view overlay hm-white-slight">
+                                        <img src="{{img.url}}" class="img-fluid" alt="">
+                                        <a href="{{product.url}}">
+                                            <div class="mask"></div>
+                                        </a>
+                                    </div>
+                                    <!--/.Card image-->
+                                    <!--Card content-->
+                                    <div class="card-block">
+                                        <!--Title-->
+                                        <h4 class="card-title">{{ product.title }}</h4>
+                                        <!--Text-->
+                                        <p class="card-text">
+                                           {{product.brief}}
+                                        </p>
+                                    </div>
+                                    <!--/.Card content-->
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+	</div>
 
 {% endblock content %}
+
