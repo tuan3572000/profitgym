@@ -2,9 +2,21 @@
 
 {% load wagtailimages_tags wagtailcore_tags  static %}
 
-{% block content %}
 <link rel="stylesheet" href="{% static 'css/product_detail_page.css' %}">
 <script type="text/javascript"  defer='defer' src="{% static 'js/product_detail_page.js' %}"></script>
+
+{% block content %}
+
+<div class="slide v1">
+   <div class="js-slider-v4">
+      <div class="slide-img ">
+         <img src="{% static 'images/32759.jpg' %}" class="img-responsive"></img>
+      </div>
+   </div>
+   <div class="custom">
+      <div class="pagingInfo"></div>
+   </div>
+</div>
 
 <div class="container">
     <br>

@@ -16,7 +16,7 @@ urlpatterns = [
     url(r'^documents/', include(wagtaildocs_urls)),
 
     url(r'^search/$', search_views.search, name='search'),
-    url(r'^products/$', product_view.product_listing, name='product-listing')
+    url(r'^san-pham/$', product_view.product_listing, name='product-listing')
 ]
 
 

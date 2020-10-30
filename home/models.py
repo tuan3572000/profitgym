@@ -6,6 +6,6 @@ from wagtail.core.models import Page
 class HomePage(Page):
     max_count = 0
 
-    # def serve(self, request):
-    #     # Redirect to blog index page
-    #     return HttpResponseRedirect('/gioi-thieu/')
+    def serve(self, request):
+        # Redirect to blog index page
+        return HttpResponseRedirect('/gioi-thieu/')

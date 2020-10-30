@@ -37,7 +37,7 @@
          <div class="menu-push">
             <span class="close-left js-close"><i class="ion-ios-close-empty f-40"></i></span>
             <div class="clearfix"></div>
-            <form role="search" method="get" id="searchform" class="searchform" action="/search">
+            <form role="search" method="get" id="searchform" class="searchform d-none" action="/search">
                <div>
                   <label class="screen-reader-text" for="q"></label>
                   <input type="text" placeholder="Search for products" value="" name="q" id="q" autocomplete="off">
@@ -45,19 +45,20 @@
                   <button type="submit" id="searchsubmit"><i class="ion-ios-search-strong"></i></button>
                </div>
             </form>
+            
             <ul class="nav-home5 js-menubar">
+             <li class="level1 active dropdown">
+                  <a href="/"><img style="height:52px" src="{% static 'images/logo.jpg' %}" alt="" class="img-reponsive"></a>
+               </li>
                <li class="level1 active dropdown">
                   <a href="/">Trang chủ</a>
                </li>
                <li class="level1 active dropdown">
                    <a href="{% url 'product-listing' %}">Sản phẩm</a>
                </li>
-               <li class="level1 active dropdown">
-                   <a href="{% url 'product-listing' %}">Chính sách đại lý</a>
-               </li>
-               <li class="level1 active dropdown">
-                   <a href="{% url 'product-listing' %}">Tuyển dụng</a>
-               </li>
+               {% menu_tags %}
+               {% about_tags %}
+               {% contact_tags %}
             </ul>
             <h4 class="pt-5 mb-title">Zalo - 0933 775 143</h4>
          </div>
@@ -94,9 +95,6 @@
                         </div>
                      </div>
                   </div>
-                  <div class="col-md-3 col-xs-4 col-sm-4 col2 justify-content-center">
-                     <a href="#"><img style="height:52px" src="{% static 'images/logo.jpg' %}" alt="" class="img-reponsive"></a>
-                  </div>
                   <div class="col-md-9 col-xs-4 col-sm-4 col2 flex justify-content-end">
                      <div class="topbar-left">
                         <div class="element hidden-xs hidden-sm">
@@ -129,7 +127,7 @@
          {% endblock %}
         
       <!-- Footer -->
-      <footer class="footer padding-bottom-50 ">
+      <footer class="footer pb-5 pt-5">
          <div class="menu-footer v2">
             <div class="container">
                <div class="col-md-8 col-sm-7 menu v2">

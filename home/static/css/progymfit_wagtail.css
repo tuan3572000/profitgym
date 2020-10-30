@@ -52,6 +52,10 @@ header.header {
 	border-bottom: 1px solid whitesmoke;
 }
 
+footer{
+	font-size: larger;
+}
+
 footer .container-content .company-contact{
 	width: 100%;
 	border-top: 3px solid whitesmoke;
@@ -73,6 +77,10 @@ footer .container-content .company-contact .brand img{
 }
 
 @media screen and (max-width: 600px){
+	.row{
+		padding-left: 5px;
+		padding-right: 5px;
+	}
 	footer .container-content .company-contact .brand img{
 		margin-right: 10px;
 	}
